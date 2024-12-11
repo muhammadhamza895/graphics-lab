@@ -79,6 +79,7 @@ if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     win = MainWindow()
     win.show()
+    print('fix')
 
     # if args.scene is not None:
     #     if os.path.exists(args.scene):
