@@ -63,28 +63,28 @@ class MainWindow(QtWidgets.QMainWindow):
             f.open_file_ask(self.openGL, self.obj_path_label, self.obj_name_label, self.uv2_label, self.material_label, self.drawcalls_label, self.vertices_label, self.triangles_label, self.edges_label)
 
 
-def get_parser():
-    parser = argparse.ArgumentParser(description='3D Viewer', add_help=False)
+# def get_parser():
+#     parser = argparse.ArgumentParser(description='3D Viewer', add_help=False)
 
-    parser.add_argument('--version', action='version', version='%(prog)s 1.0')
+#     parser.add_argument('--version', action='version', version='%(prog)s 1.0')
 
-    parser.add_argument('--scene', type=str, required=False, default=None, help='Scene to open')
+#     parser.add_argument('--scene', type=str, required=False, default=None, help='Scene to open')
 
-    return parser
+#     return parser
 
 
 if __name__ == '__main__':
-    args = get_parser().parse_args()
+    # args = get_parser().parse_args()
 
     app = QtWidgets.QApplication(sys.argv)
     win = MainWindow()
     win.show()
 
-    if args.scene is not None:
-        if os.path.exists(args.scene):
-            QtCore.QCoreApplication.processEvents()
-            win.load_file(args.scene)
-        else:
-            print('File not found: "%s"' % args.scene)
+    # if args.scene is not None:
+    #     if os.path.exists(args.scene):
+    #         QtCore.QCoreApplication.processEvents()
+    #         win.load_file(args.scene)
+    #     else:
+    #         print('File not found: "%s"' % args.scene)
 
     sys.exit(app.exec_())
